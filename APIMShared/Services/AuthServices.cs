@@ -13,50 +13,58 @@ using System.Threading.Tasks;
 
 namespace APIMShared.Services
 {
-    public class AuthServices: IAuthServices
+    public class AuthServices : IAuthServices
     {
         private readonly IConfiguration _config;
         private readonly ILogger<AuthServices> _logger;
         private readonly IMapper _mapper;
         private readonly HttpClient _httpClient;
-        
+
         public AuthServices(
             IConfiguration config,
             ILogger<AuthServices> logger,
-            IMapper mapper,
-            HttpClient httpClient)
+            IMapper mapper)
         {
             _config = config;
             _logger = logger;
-            _mapper = mapper;
-            _httpClient = httpClient;
+            _mapper = mapper;            
         }
-
-        public async Task<JWTTokenModel> GetAuthenticationTokenJWT(httpRequestParametersModel model)
-        { 
+        private async Task<JWTTokenModel> GetSAPAuthAzureToken(httpRequestParametersModel model)
+        {
+            //Get Token SAPAuth From Azure AD
             var client = new RestClient(model.baseUrl);
-            var request = new RestRequest(model.baseUrl, model.method);
 
-            //request.AddHeader("Accept", model.contentType); //
-            //request.AddParameter("client_id", model.clientId);//
-            //request.AddParameter("client_secret", model.clientSecret);//
-            //request.AddParameter("grant_type", model.grantType);//
-            //request.AddParameter("scope", model.scope);//
+            var response = await client.ExecuteAsync(BuildHttpRequestToGetSAPAuthAzureToken(model));
 
-            request.AddHeader("Accept", "");
-            request.AddParameter("client_id", "");
-            request.AddParameter("client_secret", "");
-            request.AddParameter("grant_type","");
-            request.AddParameter("scope", "");
-
-            var response = await client.ExecuteAsync(request);
- 
             return JsonConvert.DeserializeObject<JWTTokenModel>(response.Content);
         }
 
-        public string GetSAPTokenSAML()
-        {            
-            return null;
+        public async Task<RestRequest> BuildHttpRequestToSAPBasicAuth(httpRequestParametersModel model)
+        {
+            //Build HttpRequest to run the calls to GEMS
+            //Get Authorization TOKEN + SAP Basic Authentication
+            var authorization = await GetSAPAuthAzureToken(model); 
+            
+            var request = new RestRequest(_config.GetSection("Auth")["BaseUrlAzure"], model.method);
+                request.AddParameter("Authorization", "Bearer " + authorization.accessToken);
+                request.AddHeader("SAPAuthorization", _config["encriptedBase64"]);           
+                request.AddHeader("Content-Type", "application/json");
+                request.AddHeader("x-csrf-token", "Fetch"); 
+            
+            return request;
         }
+
+        public RestRequest BuildHttpRequestToGetSAPAuthAzureToken(httpRequestParametersModel model)
+        {
+            var request = new RestRequest(model.baseUrl, model.method);
+            //request.AddHeader("Accept", model.contentType);
+            request.AddParameter("client_id", _config.GetSection("Auth")["ClientId"]);
+            request.AddParameter("client_secret", _config.GetSection("Auth")["ClientSecret"]);
+            request.AddParameter("grant_type", model.grantType);
+            request.AddParameter("scope", model.scope);
+
+            return request;
+        }
+        
     }
 }

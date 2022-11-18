@@ -2,6 +2,7 @@
 using APIMShared.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Reflection;
 using System.Threading.Tasks;
 
@@ -21,10 +22,11 @@ namespace APIMShared.Controllers
         }
 
         [HttpGet ("/GetAuth")]
-        public Task<JWTTokenModel> GetAuthenticationTokenJWT()
+        public Task<string> GetAuthenticationTokenJWT()
         {
-            httpRequestParametersModel model = new httpRequestParametersModel();
-            var result = _authServices.GetAuthenticationTokenJWT(model);
+            var result = _authServices.BuildHttpRequestToSAPBasicAuth();
+
+            _authServices.RequestToGEMS
 
             return result;
         }

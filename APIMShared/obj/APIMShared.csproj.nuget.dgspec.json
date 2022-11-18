@@ -1,32 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TBS\\source\\repos\\APIMShared\\APIMShared\\APIMShared.csproj": {}
+    "C:\\Users\\lpleucz\\Source\\repos\\APIMShared6x\\APIMShared\\APIMShared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TBS\\source\\repos\\APIMShared\\APIMShared\\APIMShared.csproj": {
+    "C:\\Users\\lpleucz\\Source\\repos\\APIMShared6x\\APIMShared\\APIMShared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TBS\\source\\repos\\APIMShared\\APIMShared\\APIMShared.csproj",
+        "projectUniqueName": "C:\\Users\\lpleucz\\Source\\repos\\APIMShared6x\\APIMShared\\APIMShared.csproj",
         "projectName": "APIMShared",
-        "projectPath": "C:\\Users\\TBS\\source\\repos\\APIMShared\\APIMShared\\APIMShared.csproj",
-        "packagesPath": "C:\\Users\\TBS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TBS\\source\\repos\\APIMShared\\APIMShared\\obj\\",
+        "projectPath": "C:\\Users\\lpleucz\\Source\\repos\\APIMShared6x\\APIMShared\\APIMShared.csproj",
+        "packagesPath": "C:\\Users\\lpleucz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lpleucz\\Source\\repos\\APIMShared6x\\APIMShared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\TBS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lpleucz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.1"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/ExxonMobil/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -37,8 +38,8 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -47,6 +48,10 @@
             "Azure.Core": {
               "target": "Package",
               "version": "[1.26.0, )"
+            },
+            "Microsoft.Azure.Functions.Extensions": {
+              "target": "Package",
+              "version": "[1.1.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -63,8 +68,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -76,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
