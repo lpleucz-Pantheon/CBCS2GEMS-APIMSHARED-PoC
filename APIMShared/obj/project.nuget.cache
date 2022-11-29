@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UCjQbkwkrcQ9XUgiLupW1NiuXJYuOjt1e4FmaxkCElGw+3C7FBiNULybXzBQKoehPWRG75309aPbEIl+h1ckvQ==",
+  "dgSpecHash": "lK37o6M8Qtw/oUrAcq22BGYRYTavcDbEYyX5I1WM9ju2COwBsOj90nUzOE7UvP9FYjLmQjn8xhUtxm9qcaw5DA==",
   "success": true,
   "projectFilePath": "C:\\Users\\lpleucz\\Source\\repos\\APIMShared6x\\APIMShared\\APIMShared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lpleucz\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\lpleucz\\.nuget\\packages\\azure.core\\1.26.0\\azure.core.1.26.0.nupkg.sha512",
+    "C:\\Users\\lpleucz\\.nuget\\packages\\azure.extensions.aspnetcore.configuration.secrets\\1.2.2\\azure.extensions.aspnetcore.configuration.secrets.1.2.2.nupkg.sha512",
     "C:\\Users\\lpleucz\\.nuget\\packages\\azure.identity\\1.8.0\\azure.identity.1.8.0.nupkg.sha512",
     "C:\\Users\\lpleucz\\.nuget\\packages\\azure.security.keyvault.secrets\\4.4.0\\azure.security.keyvault.secrets.4.4.0.nupkg.sha512",
     "C:\\Users\\lpleucz\\.nuget\\packages\\microsoft.azure.functions.extensions\\1.1.0\\microsoft.azure.functions.extensions.1.1.0.nupkg.sha512",

@@ -19,26 +19,11 @@ namespace APIMShared
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            //services.AddControllers().AddNewtonsofJson(OptionsBuilderConfigurationExtensions =>
-            //{
-            //    Options.SerializerSettings.NullValueHandling = NullValuesHandling.Ignore;
-            //});
+            services.AddControllers();            
             services.AddHttpClient();
             services.AddTransient<ISapServices, SapServices>();
-            services.AddTransient<IAuthServices, AuthServices>();
-
-            var keyVaultConfig = Configuration.GetSection("KeyVaultSetting").Get<KeyVaultSetting>();
-
-            #if !DEBUG
-            var keyvault = new KeyVault(keyVaultConfig);
-            #else
-            var keyvault = new KeyVault(keyVaultConfig.Name, true, "http://dalprx01.na.xom.com:8080");
-            #endif
-            keyvault.PopulateSecrets(Configuration);
-        }
-
-        
+            services.AddTransient<IAuthServices, AuthServices>();            
+        }        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -29,3 +29,11 @@ C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\obj\Debug\net6.0\refint\AP
 C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\obj\Debug\net6.0\APIMShared.pdb
 C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\obj\Debug\net6.0\APIMShared.genruntimeconfig.cache
 C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\obj\Debug\net6.0\ref\APIMShared.dll
+C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\bin\Debug\net6.0\Azure.Extensions.AspNetCore.Configuration.Secrets.dll
+C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\bin\Debug\net6.0\Azure.Security.KeyVault.Secrets.dll
+C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\lpleucz\Source\repos\APIMShared6x\APIMShared\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll

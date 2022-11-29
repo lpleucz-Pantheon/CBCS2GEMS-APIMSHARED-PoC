@@ -24,14 +24,17 @@ namespace APIMShared.Services
 
         public async Task<string> RequestToGEMS(string service, string task, SapMessageModel body)
         {
-            //Get return from a Gems service            
-            string baseurl = _config.GetValue<string>("Auth:BaseUrlSap") + $"{service}/{task}";
-            var client = new RestClient(baseurl);
+            //Create the base url to use SAP Service Call     
+            string baseurl = _config["BaseUrlSap"] + $"{service}/{task}";
+            
+            //Build the Request structure to use the SAP Service Call
             var request = await _authServices.BuildHttpRequestToSAPBasicAuth(baseurl, body);
+
+            //Execute the SAP Service Call
+            var client = new RestClient(baseurl);
             var response = await client.ExecuteAsync(request);
 
             return response.Content.ToString();
-
         }
     }
 }       

@@ -32,6 +32,20 @@
           "lib/net6.0/Azure.Core.dll": {}
         }
       },
+      "Azure.Extensions.AspNetCore.Configuration.Secrets/1.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.24.0",
+          "Azure.Security.KeyVault.Secrets": "4.2.0",
+          "Microsoft.Extensions.Configuration": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Azure.Extensions.AspNetCore.Configuration.Secrets.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Extensions.AspNetCore.Configuration.Secrets.dll": {}
+        }
+      },
       "Azure.Identity/1.8.0": {
         "type": "package",
         "dependencies": {
@@ -826,6 +840,22 @@
         "lib/netcoreapp2.1/Azure.Core.xml",
         "lib/netstandard2.0/Azure.Core.dll",
         "lib/netstandard2.0/Azure.Core.xml"
+      ]
+    },
+    "Azure.Extensions.AspNetCore.Configuration.Secrets/1.2.2": {
+      "sha512": "veuqVD+Xr9/EOj9vTXBKvoh2GqObb6r+oK99L6rasJDOAJCTwwf6JqcOqXeNGnIDP0k0CcjfQSN4tY4nC7EHkg==",
+      "type": "package",
+      "path": "azure.extensions.aspnetcore.configuration.secrets/1.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.extensions.aspnetcore.configuration.secrets.1.2.2.nupkg.sha512",
+        "azure.extensions.aspnetcore.configuration.secrets.nuspec",
+        "azureicon.png",
+        "lib/netstandard2.0/Azure.Extensions.AspNetCore.Configuration.Secrets.dll",
+        "lib/netstandard2.0/Azure.Extensions.AspNetCore.Configuration.Secrets.xml"
       ]
     },
     "Azure.Identity/1.8.0": {
@@ -2833,6 +2863,7 @@
     "net6.0": [
       "AutoMapper >= 12.0.0",
       "Azure.Core >= 1.26.0",
+      "Azure.Extensions.AspNetCore.Configuration.Secrets >= 1.2.2",
       "Azure.Identity >= 1.8.0",
       "Azure.Security.KeyVault.Secrets >= 4.4.0",
       "Microsoft.Azure.Functions.Extensions >= 1.1.0",
@@ -2887,6 +2918,10 @@
           "Azure.Core": {
             "target": "Package",
             "version": "[1.26.0, )"
+          },
+          "Azure.Extensions.AspNetCore.Configuration.Secrets": {
+            "target": "Package",
+            "version": "[1.2.2, )"
           },
           "Azure.Identity": {
             "target": "Package",

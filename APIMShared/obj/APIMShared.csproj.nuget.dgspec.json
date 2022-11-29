@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[1.26.0, )"
             },
+            "Azure.Extensions.AspNetCore.Configuration.Secrets": {
+              "target": "Package",
+              "version": "[1.2.2, )"
+            },
             "Azure.Identity": {
               "target": "Package",
               "version": "[1.8.0, )"
