@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using APIMShared.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using RestSharp;
 using System.Threading.Tasks;
@@ -21,15 +22,16 @@ namespace APIMShared.Services
             _authServices = authServices;
         }
 
-        public async Task<string> RequestToGEMS(string query, RestRequest httpAuthHeader)
+        public async Task<string> RequestToGEMS(string service, string task, SapMessageModel body)
         {
-            //Get return from a query From gems
-            var client = new RestClient(_config["BaseUrlSap"] + query);
-            var request = await _authServices.BuildHttpRequestToSAPBasicAuth(new Models.httpRequestParametersModel()); //ToDo
+            //Get return from a Gems service            
+            string baseurl = _config.GetValue<string>("Auth:BaseUrlSap") + $"{service}/{task}";
+            var client = new RestClient(baseurl);
+            var request = await _authServices.BuildHttpRequestToSAPBasicAuth(baseurl, body);
             var response = await client.ExecuteAsync(request);
 
-            return response.IsSuccessStatusCode ? response.Content.ToString() : null;
+            return response.Content.ToString();
 
         }
     }
-}
+}       

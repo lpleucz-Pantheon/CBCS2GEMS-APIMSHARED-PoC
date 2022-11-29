@@ -7,8 +7,8 @@ namespace APIMShared.Services
 {
     public interface IAuthServices
     {
-        Task<JWTTokenModel> GetSAPAuthAzureToken(httpRequestParametersModel model);
-        Task<RestRequest> BuildHttpRequestToSAPBasicAuth(httpRequestParametersModel model);
-        public RestRequest BuildHttpRequestToGetSAPAuthAzureToken(httpRequestParametersModel model);
+        Task<JWTTokenModel> GetSAPAuthAzureToken();
+        Task<RestRequest> BuildHttpRequestToSAPBasicAuth(string baseurl, SapMessageModel body);
+        public RestRequest BuildHttpRequestToGetSAPAuthAzureToken();
     }
 }

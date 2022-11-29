@@ -10,7 +10,7 @@ namespace APIMShared.Mappers
         {
             //To Test
             CreateMap<RestResponse, JWTTokenModel>()
-                .ForMember(x => x.accessToken, m => m.MapFrom(d => d.Content));    
+                .ForMember(x => x.access_token, m => m.MapFrom(d => d.Content));            
         }
     }
 }

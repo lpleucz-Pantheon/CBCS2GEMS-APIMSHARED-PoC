@@ -2,9 +2,9 @@
 {
     public class JWTTokenModel
     {
-        public string tokenType { get; set; }
-        public long expiresIn { get; set; }
-        public long extExpiresIn { get; set; }
-        public string accessToken { get; set; }
+        public string token_type { get; set; }
+        public string expires_in { get; set; }
+        public string ext_expires_in { get; set; }
+        public string access_token { get; set; }
     }
 }
